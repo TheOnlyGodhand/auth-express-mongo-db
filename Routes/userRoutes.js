@@ -52,7 +52,7 @@ route.post("/login",async(req,res)=>{
                 process.env.SECRET_KEY,
                 {expiresIn:process.env.JWT_EXPIRE})
                 
-        return res.cookie({"token":token}).json({success : true,message:'loggedIn successufuly '})
+        return res.cookie({"token":token}).json({success : true,message:'loggedIn successufuly '+token})
     } catch (error) {
         return res.json({error : error})
     }
